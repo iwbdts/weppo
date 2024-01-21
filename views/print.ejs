@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Print</title>
+  </head>
+  <body>
+    <h1>zgłoszone zadania</h1>
+    <div>Imię: <%= imie %></div>
+    <div>Nazwisko: <%= nazwisko %></div>
+    <div>Przedmiot: <%= przedmiot %></div>
+    <% for (const [key, value] of Object.entries(zadania)) { %>
+    <div><%= key %> : <%= value %></div>
+    <% } %>
+  </body>
+</html>

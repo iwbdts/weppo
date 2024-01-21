@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form method="POST">
+      <div>
+        Imię:
+        <input type="text" name="imie" value="<%= imie %>" />
+      </div>
+      <div>
+        Nazwisko:
+        <input type="text" name="nazwisko" value="<%= nazwisko %>" />
+      </div>
+      <div>
+        Przedmiot:
+        <input type="text" name="przedmiot" value="<%= przedmiot %>" />
+      </div>
+      <% for (var i = 1; i < 11; i++) { %>
+      <div>
+        zadanie <%= i %>:
+        <input
+          type="number"
+          name="<%= 'zadanie' + i %>"
+          value="<%= 'zadanie' + i %>"
+        />
+      </div>
+      <% } %>
+      <div>
+        <button>Prześlij na serwer</button>
+      </div>
+      <% if (locals.message) { %>
+      <div><%= message %></div>
+      <% } %>
+    </form>
+  </body>
+</html>

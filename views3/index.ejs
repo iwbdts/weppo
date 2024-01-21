@@ -1,0 +1,37 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form method="POST">
+      Wartość z ciastka: <%= cookieValue %>
+      <button>Zapisz</button>
+    </form>
+    <script>
+      function areCookiesEnabled() {
+        try {
+          document.cookie = "testCookie=1";
+          var cookieEnabled = document.cookie.indexOf("testCookie") !== -1;
+          document.cookie =
+            "testCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          return cookieEnabled;
+        } catch (e) {
+            console.log('error');
+          return false;
+        }
+      }
+
+      if (areCookiesEnabled()) {
+        console.log("Cookies are enabled in this browser.");
+      } else {
+        console.log("Cookies are disabled in this browser.");
+      }
+    </script>
+    <noscript> NO SCRIPT </noscript>
+  </body>
+</html>

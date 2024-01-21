@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check Cookies</title>
+  </head>
+  <body>
+    <script>
+      function cookiesEnabled() {
+        if (typeof navigator.cookieEnabled == "undefined") {
+          document.cookie = "mytestcookie";
+          return document.cookie.indexOf("mytestcookie") !== -1;
+        }
+        return navigator.cookieEnabled;
+      }
+
+      if (cookiesEnabled()) {
+        document.getElementById("msg").innerHTML = "Cookies are enabled";
+      } else {
+        document.getElementById("msg").innerHTML = "Cookies are disabled";
+      }
+    </script>
+    <noscript>
+      This text would be displayed if JavaScript is not enabled
+    </noscript>
+  </body>
+</html>
